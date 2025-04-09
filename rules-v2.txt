@@ -1,2 +1,3 @@
 [Rule]
 DOMAIN-SUFFIX, dida365.com, Proxy
+DOMAIN-SUFFIX, sankuai.com, Direct

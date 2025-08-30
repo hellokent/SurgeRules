@@ -6,3 +6,4 @@ DOMAIN-SUFFIX, zoom.com, Direct
 DOMAIN-SUFFIX, zoom.com.cn, Direct
 DOMAIN-SUFFIX, zoomus.cn, Direct
 DOMAIN-SUFFIX, zoom.cn, Direct
+DOMAIN-SUFFIX, dev.ide, Direct

@@ -1,6 +1,8 @@
 DOMAIN-SUFFIX, dida365.com, Proxy
 DOMAIN-SUFFIX, sankuai.com, Direct
 DOMAIN-SUFFIX, meituan.com, Direct
+DOMAIN-SUFFIX, meituan.net, Direct
+DOMAIN-SUFFIX, dianping.com, Direct
 DOMAIN-SUFFIX, zoom.us, Direct
 DOMAIN-SUFFIX, zoom.com, Direct
 DOMAIN-SUFFIX, zoom.com.cn, Direct

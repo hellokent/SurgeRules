@@ -3,8 +3,7 @@
 #!system=false
 
 [Host]
-# --- 核心修复：强制使用本地(内网)DNS ---
-# 告诉 Surge：遇到这些域名，去问系统 DNS (即公司分配的 DNS)，别问谷歌
+
 *.sankuai.com = server:system
 *.meituan.com = server:system
 *.meituan.net = server:system
@@ -17,19 +16,13 @@ dev.ide = server:system
 *.zoom.cn = server:system
 
 [Rule]
-# --- 路由规则：强制直连 ---
-# 注意：Surge 规则是从上到下匹配，Module 会插在最前面，通常优先级最高
 DOMAIN-SUFFIX, dev.ide, DIRECT
 DOMAIN-SUFFIX, sankuai.com, DIRECT
 DOMAIN-SUFFIX, meituan.com, DIRECT
 DOMAIN-SUFFIX, meituan.net, DIRECT
 DOMAIN-SUFFIX, dianping.com, DIRECT
-
-# Zoom
 DOMAIN-SUFFIX, zoom.us, DIRECT
 DOMAIN-SUFFIX, zoom.com, DIRECT
 DOMAIN-SUFFIX, zoom.cn, DIRECT
 DOMAIN-SUFFIX, zoom.com.cn, DIRECT
-
-# 其他必须走代理的
 DOMAIN-SUFFIX, dida365.com, 国外流量

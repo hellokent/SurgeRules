@@ -1,0 +1,24 @@
+#!name=My Work Rules
+#!desc=美团内网、Zoom直连与开发环境配置
+
+[Rule]
+# --- 开发与内网 (直连) ---
+# 你的 dev.ide 是内网/远程开发环境，必须直连否则会卡顿
+DOMAIN-SUFFIX, dev.ide, DIRECT
+
+# 美团/三快内网与产品 (直连)
+DOMAIN-SUFFIX, sankuai.com, DIRECT
+DOMAIN-SUFFIX, meituan.com, DIRECT
+DOMAIN-SUFFIX, meituan.net, DIRECT
+DOMAIN-SUFFIX, dianping.com, DIRECT
+
+# --- 视频会议 (直连以保证低延迟) ---
+DOMAIN-SUFFIX, zoom.us, DIRECT
+DOMAIN-SUFFIX, zoom.com, DIRECT
+DOMAIN-SUFFIX, zoom.com.cn, DIRECT
+DOMAIN-SUFFIX, zoomus.cn, DIRECT
+DOMAIN-SUFFIX, zoom.cn, DIRECT
+
+# --- 其他 (走代理) ---
+# 滴答清单 (注意：请确认你的策略组名字确实叫 Proxy)
+DOMAIN-SUFFIX, dida365.com, Proxy

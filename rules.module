@@ -1,24 +1,35 @@
-#!name=My Work Rules
-#!desc=美团内网、Zoom直连与开发环境配置
+#!name=Company Intranet Fix
+#!desc=修复内网DNS解析并强制直连
+#!system=false
+
+[Host]
+# --- 核心修复：强制使用本地(内网)DNS ---
+# 告诉 Surge：遇到这些域名，去问系统 DNS (即公司分配的 DNS)，别问谷歌
+*.sankuai.com = server:system
+*.meituan.com = server:system
+*.meituan.net = server:system
+*.dianping.com = server:system
+dev.ide = server:system
+*.dev.ide = server:system
+*.zoom.us = server:system
+*.zoom.com = server:system
+*.zoom.com.cn = server:system
+*.zoom.cn = server:system
 
 [Rule]
-# --- 开发与内网 (直连) ---
-# 你的 dev.ide 是内网/远程开发环境，必须直连否则会卡顿
+# --- 路由规则：强制直连 ---
+# 注意：Surge 规则是从上到下匹配，Module 会插在最前面，通常优先级最高
 DOMAIN-SUFFIX, dev.ide, DIRECT
-
-# 美团/三快内网与产品 (直连)
 DOMAIN-SUFFIX, sankuai.com, DIRECT
 DOMAIN-SUFFIX, meituan.com, DIRECT
 DOMAIN-SUFFIX, meituan.net, DIRECT
 DOMAIN-SUFFIX, dianping.com, DIRECT
 
-# --- 视频会议 (直连以保证低延迟) ---
+# Zoom
 DOMAIN-SUFFIX, zoom.us, DIRECT
 DOMAIN-SUFFIX, zoom.com, DIRECT
-DOMAIN-SUFFIX, zoom.com.cn, DIRECT
-DOMAIN-SUFFIX, zoomus.cn, DIRECT
 DOMAIN-SUFFIX, zoom.cn, DIRECT
+DOMAIN-SUFFIX, zoom.com.cn, DIRECT
 
-# --- 其他 (走代理) ---
-# 滴答清单 (注意：请确认你的策略组名字确实叫 Proxy)
-DOMAIN-SUFFIX, dida365.com, Proxy
+# 其他必须走代理的
+DOMAIN-SUFFIX, dida365.com, 国外流量

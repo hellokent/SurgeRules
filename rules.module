@@ -1,9 +1,8 @@
 #!name=Company Intranet Fix
-#!desc=修复内网DNS解析并强制直连
-#!system=false
+#!desc=修复内网DNS解析并强制直连 (Host + Rule)
 
 [Host]
-
+# --- 强制内网域名走系统 DNS ---
 *.sankuai.com = server:system
 *.meituan.com = server:system
 *.meituan.net = server:system
@@ -16,13 +15,18 @@ dev.ide = server:system
 *.zoom.cn = server:system
 
 [Rule]
+# --- 规则部分 ---
 DOMAIN-SUFFIX, dev.ide, DIRECT
 DOMAIN-SUFFIX, sankuai.com, DIRECT
 DOMAIN-SUFFIX, meituan.com, DIRECT
 DOMAIN-SUFFIX, meituan.net, DIRECT
 DOMAIN-SUFFIX, dianping.com, DIRECT
+
+# Zoom
 DOMAIN-SUFFIX, zoom.us, DIRECT
 DOMAIN-SUFFIX, zoom.com, DIRECT
 DOMAIN-SUFFIX, zoom.cn, DIRECT
 DOMAIN-SUFFIX, zoom.com.cn, DIRECT
+
+# 这里的 "国外流量" 必须是你 Surge 策略组里真实存在的名字
 DOMAIN-SUFFIX, dida365.com, 国外流量

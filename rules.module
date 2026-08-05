@@ -29,4 +29,4 @@ DOMAIN-SUFFIX, zoom.cn, DIRECT
 DOMAIN-SUFFIX, zoom.com.cn, DIRECT
 
 # 这里的 "国外流量" 必须是你 Surge 策略组里真实存在的名字
-DOMAIN-SUFFIX, dida365.com, 国外流量
+DOMAIN-SUFFIX, dida365.com, PROXY
